@@ -1,8 +1,12 @@
 package ducks;
 
 
-public abstract class Duck {
+import ducks.flying.FlyBehaviour;
+import ducks.quacking.QuackBehaviour;
 
+public abstract class Duck {
+    QuackBehaviour quackBehaviour;
+    FlyBehaviour flyBehaviour;
     // Every duck has to quack
     public abstract void quack();
 
@@ -12,4 +16,11 @@ public abstract class Duck {
     // How duck is displayed on the screen
     public abstract void display();
 
+    public void doFly() {
+        flyBehaviour.fly();
+    }
+
+    public void quackSound() {
+        quackBehaviour.quack();
+    }
 }

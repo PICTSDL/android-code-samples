@@ -1,6 +1,10 @@
 package ducks;
 
 
+import ducks.flying.FlyWithWings;
+import ducks.quacking.Quack;
+import ducks.quacking.Squeak;
+
 /**
  * Looks like Mallard
  */
@@ -11,7 +15,10 @@ public class MallardDuck extends Duck{
         System.out.println("Mallard's quack..");
     }
 
-    public MallardDuck() { }
+    public MallardDuck() {
+        flyBehaviour = new FlyWithWings();
+        quackBehaviour = new Squeak();
+    }
 
     @Override
     public void swim() {
